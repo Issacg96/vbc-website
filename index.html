@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Venture Business Capital connects businesses with institutional-grade capital from 50+ banks and private lenders. Fast funding, transparent terms, no equity dilution.">
+<title>Venture Business Capital — Business & Real Estate Financing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Venture Business Capital",
+  "description": "Institutional-grade capital solutions for business and real estate financing",
+  "url": "https://venturebc.com",
+  "telephone": "(800) 123-4567",
+  "email": "hello@venturebc.com",
+  "areaServed": "US",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "247" }
+}
+</script>
+
+<style>
+:root {
+  --forest: #1a4d2e;
+  --green: #2e7d32;
+  --green-soft: #e8f0ea;
+  --gold: #c99960;
+  --ink: #212721;
+  --ink-soft: #5c645c;
+  --paper: #fafaf7;
+  --white: #ffffff;
+  --line: #e3e5e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3, .serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ============ HEADER ============ */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250, 250, 247, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand svg { display: block; }
+.brand-name { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; line-height: 1.1; }
+.brand-tag { font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.02em; }
+
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav a {
+  text-decoration: none; color: var(--ink-soft); font-size: 14px; font-weight: 500;
+  transition: color 0.15s;
+}
+.nav a:hover { color: var(--forest); }
+
+.btn {
+  display: inline-block; text-decoration: none; cursor: pointer; border: none;
+  font-family: 'Inter', sans-serif; font-size: 14.5px; font-weight: 600;
+  padding: 11px 22px; border-radius: 3px; transition: background 0.15s, color 0.15s;
+}
+.btn-solid { background: var(--forest); color: var(--white); }
+.btn-solid:hover { background: var(--green); }
+.btn-line { background: transparent; color: var(--forest); box-shadow: inset 0 0 0 1.5px var(--forest); }
+.btn-line:hover { background: var(--forest); color: var(--white); }
+
+/* ============ HERO ============ */
+.hero { background: var(--white); border-bottom: 1px solid var(--line); }
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 88px 24px 72px;
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: center;
+}
+
+.hero h1 { font-size: 52px; margin-bottom: 22px; color: var(--ink); }
+.hero h1 em { font-style: italic; color: var(--forest); }
+
+.hero-lede { font-size: 18px; color: var(--ink-soft); max-width: 52ch; margin-bottom: 32px; }
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-figures {
+  border-left: 1px solid var(--line);
+  padding-left: 48px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+
+.figure-num {
+  font-family: 'Fraunces', serif; font-size: 40px; font-weight: 500; color: var(--forest);
+  line-height: 1;
+}
+.figure-num sup { font-size: 22px; color: var(--gold); }
+.figure-label { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; }
+
+/* ============ SECTION BASICS ============ */
+.section { padding: 80px 0; }
+.section-head { max-width: 640px; margin-bottom: 52px; }
+.kicker {
+  font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 0.08em;
+  margin-bottom: 12px; display: block;
+}
+.section-head h2 { font-size: 36px; margin-bottom: 14px; }
+.section-head p { color: var(--ink-soft); font-size: 16.5px; }
+
+/* ============ SERVICES ============ */
+.services { background: var(--paper); }
+
+.svc-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+
+.svc-group-title {
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600;
+  padding-bottom: 16px; margin-bottom: 8px;
+  border-bottom: 2px solid var(--forest);
+}
+.svc-group-title.re { border-bottom-color: var(--gold); }
+
+.svc-item {
+  display: flex; gap: 18px; padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.svc-item:last-child { border-bottom: none; }
+
+.svc-icon {
+  flex-shrink: 0; width: 42px; height: 42px; border-radius: 3px;
+  background: var(--green-soft); color: var(--forest);
+  display: flex; align-items: center; justify-content: center;
+}
+.svc-icon svg { width: 20px; height: 20px; }
+
+.svc-item h3 { font-size: 17.5px; font-weight: 600; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+.svc-item p { font-size: 14.5px; color: var(--ink-soft); }
+
+/* ============ WHY ============ */
+.why { background: var(--forest); color: #eef2ee; }
+.why .kicker { color: var(--gold); }
+.why h2 { color: var(--white); }
+.why .section-head p { color: #b9c6bb; }
+
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 56px; }
+
+.why-item { padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18); }
+.why-item h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.why-item h3::before { content: "— "; color: var(--gold); }
+.why-item p { font-size: 14px; color: #b9c6bb; }
+
+/* ============ REVIEWS ============ */
+.reviews { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+.review q {
+  display: block; quotes: "\201C" "\201D";
+  font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.45;
+  color: var(--ink); margin-bottom: 16px;
+}
+.review q::before { color: var(--gold); }
+
+.review-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+.review-name { font-size: 14px; font-weight: 600; }
+.review-role { font-size: 13px; color: var(--ink-soft); }
+
+/* ============ PARTNERS ============ */
+.partners { background: var(--paper); overflow: hidden; }
+.partners .section-head { margin-bottom: 40px; }
+
+.marquee { position: relative; overflow: hidden; }
+.marquee::before, .marquee::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(90deg, var(--paper), transparent); }
+.marquee::after { right: 0; background: linear-gradient(-90deg, var(--paper), transparent); }
+
+.marquee-track {
+  display: flex; gap: 12px; width: max-content;
+  animation: marquee 42s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; } }
+
+.partner {
+  flex-shrink: 0; padding: 18px 28px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 3px;
+  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ============ CTA ============ */
+.cta { background: var(--white); }
+.cta-band {
+  max-width: 1200px; margin: 0 auto; padding: 72px 24px; text-align: center;
+}
+.cta-band h2 { font-size: 38px; margin-bottom: 14px; }
+.cta-band p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto 30px; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ============ FOOTER ============ */
+.site-footer { background: var(--ink); color: #b7bdb6; font-size: 14px; }
+
+.trust-strip {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.trust-inner {
+  max-width: 1200px; margin: 0 auto; padding: 28px 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.trust-item { display: flex; align-items: center; gap: 12px; }
+.trust-item svg { flex-shrink: 0; width: 26px; height: 26px; color: var(--gold); }
+.trust-title { color: var(--white); font-weight: 600; font-size: 13.5px; }
+.trust-sub { font-size: 12px; color: #8a918a; }
+
+.footer-cols {
+  max-width: 1200px; margin: 0 auto; padding: 56px 24px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-cols h4 {
+  font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--white);
+  margin-bottom: 16px;
+}
+.footer-cols p { line-height: 1.7; }
+.footer-cols a { display: block; color: #b7bdb6; text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
+.footer-cols a:hover { color: var(--gold); }
+
+.footer-base { border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-base-inner {
+  max-width: 1200px; margin: 0 auto; padding: 22px 24px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font-size: 12.5px; color: #8a918a;
+}
+.footer-base a { color: #b7bdb6; text-decoration: none; margin-left: 18px; }
+.footer-base a:hover { color: var(--gold); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px 56px; }
+  .hero h1 { font-size: 40px; }
+  .hero-figures {
+    border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 32px;
+    flex-direction: row; justify-content: space-between; gap: 16px;
+  }
+  .svc-columns { grid-template-columns: 1fr; gap: 48px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .review-grid { grid-template-columns: 1fr; gap: 32px; }
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+  .footer-cols { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
+  .nav a:not(.btn) { display: none; }
+  .hero h1 { font-size: 33px; }
+  .hero-figures { flex-direction: column; gap: 24px; }
+  .section { padding: 56px 0; }
+  .section-head h2 { font-size: 29px; }
+  .why-grid { grid-template-columns: 1fr; gap: 28px; }
+  .trust-inner { grid-template-columns: 1fr; }
+  .footer-cols { grid-template-columns: 1fr; }
+  .cta-band h2 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <svg width="46" height="34" viewBox="0 0 200 120" aria-hidden="true">
+        <line x1="20" y1="30" x2="20" y2="65" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="20" y1="30" x2="32" y2="30" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="20" y1="47" x2="32" y2="47" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="20" y1="65" x2="32" y2="65" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <path d="M 32 30 Q 38 38 32 47" fill="none" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <path d="M 32 47 Q 38 56 32 65" fill="none" stroke="#1a4d2e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="60" y1="20" x2="90" y2="75" stroke="#2e7d32" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="120" y1="20" x2="90" y2="75" stroke="#2e7d32" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M 160 30 Q 145 47.5 160 65" fill="none" stroke="#c99960" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">Venture Business Capital</span><br>
+        <span class="brand-tag">Growth Capital Solutions</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why VBC</a>
+      <a href="#reviews">Clients</a>
+      <a href="#contact" class="btn btn-solid">Schedule a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Institutional capital, <em>without giving up a single share.</em></h1>
+      <p class="hero-lede">VBC connects your business with the right lender from a network of 50+ banks and private funds — at market rates, on your terms, in weeks rather than months.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-solid">Schedule a consultation</a>
+        <a href="#services" class="btn btn-line">Explore financing options</a>
+      </div>
+    </div>
+    <div class="hero-figures">
+      <div>
+        <div class="figure-num">50<sup>+</sup></div>
+        <div class="figure-label">Banks and private capital partners</div>
+      </div>
+      <div>
+        <div class="figure-num">$1B<sup>+</sup></div>
+        <div class="figure-label">In financing arranged for clients</div>
+      </div>
+      <div>
+        <div class="figure-num">2–4<sup> wks</sup></div>
+        <div class="figure-label">Typical time from application to funding</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Financing solutions</span>
+      <h2>Capital structured around your business, not the other way around.</h2>
+      <p>Every engagement starts with your goals. We match you to the lender and structure that fits.</p>
+    </div>
+
+    <div class="svc-columns">
+      <div>
+        <div class="svc-group-title">Business financing</div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5 9.2 9.5 12 9.5s5 1.1 5 3-2.2 3-5 3-5-1.1-5-3"/></svg>
+          </div>
+          <div>
+            <h3>Term loans</h3>
+            <p>Fixed or variable financing for operations, equipment, and expansion. Terms up to 10 years.</p>
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div>
+            <h3>Lines of credit</h3>
+            <p>Draw what you use, pay interest only on drawn amounts. Capital on standby for whatever comes.</p>
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M13 20H2v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4zM7.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16 3.5a3.5 3.5 0 0 1 0 6.5"/></svg>
+          </div>
+          <div>
+            <h3>Acquisition financing</h3>
+            <p>Strategic capital for M&amp;A, buyouts, and partner purchases — structured to match your cash flow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="svc-group-title re">Real estate financing</div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M10 22v-4h4v4"/></svg>
+          </div>
+          <div>
+            <h3>Commercial loans</h3>
+            <p>Institutional-grade financing for retail, office, and mixed-use property nationwide.</p>
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3>Hard money loans</h3>
+            <p>Fast closings for fix-and-flip and investment property when timing is everything.</p>
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l8-6 8 6v12M9 20v-6h6v6"/></svg>
+          </div>
+          <div>
+            <h3>Construction loans</h3>
+            <p>Draw schedules tied to project milestones, built for complex ground-up development.</p>
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-8 4 16 3-12 2 4h5"/></svg>
+          </div>
+          <div>
+            <h3>Bridge loans</h3>
+            <p>Short-term capital to close the gap between transactions, with flexible repayment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Why VBC</span>
+      <h2>We work for you — not for the lender.</h2>
+      <p>Our only job is finding the right capital partner and the right structure for your situation.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>No equity dilution</h3>
+        <p>Keep 100% ownership. Debt financing means you never give up control of what you built.</p>
+      </div>
+      <div class="why-item">
+        <h3>Market rates</h3>
+        <p>Competitive institutional pricing with transparent terms and no hidden fees.</p>
+      </div>
+      <div class="why-item">
+        <h3>Fast funding</h3>
+        <p>2–4 weeks from application to funding, versus 3–6 months at a traditional bank.</p>
+      </div>
+      <div class="why-item">
+        <h3>Expert matching</h3>
+        <p>We know which lenders say yes to your industry, size, and structure — before we apply.</p>
+      </div>
+      <div class="why-item">
+        <h3>National network</h3>
+        <p>Relationships with top institutions and private funds across all 50 states.</p>
+      </div>
+      <div class="why-item">
+        <h3>Full transparency</h3>
+        <p>You see every term before you sign. No surprises at closing, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Client outcomes</span>
+      <h2>Businesses that came to us, and stayed.</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>VBC helped us secure $250K in three weeks. Professional and transparent from first call to closing.</q>
+        <div class="review-name">Sarah Martinez</div>
+        <div class="review-role">CEO, Martinez Manufacturing</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>After two banks rejected us, VBC found the right lender in 18 days.</q>
+        <div class="review-name">James Chen</div>
+        <div class="review-role">Founder, Tech Solutions</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>No equity dilution, market rates. VBC changed the trajectory of my business.</q>
+        <div class="review-name">Michael Torres</div>
+        <div class="review-role">Owner, Torres Construction</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>Their real estate expertise is unmatched. The perfect hard money partner.</q>
+        <div class="review-name">Lisa Goldman</div>
+        <div class="review-role">Real Estate Investor</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>Genuinely invested in our success. VBC delivered exactly what they promised.</q>
+        <div class="review-name">David Anderson</div>
+        <div class="review-role">President, Anderson Retail</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <q>The best experience I've had with a capital solutions firm. VBC sets the bar.</q>
+        <div class="review-name">Elena Rodriguez</div>
+        <div class="review-role">Owner, Rodriguez &amp; Co</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section partners">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Our network</span>
+      <h2>Backed by America's leading institutions.</h2>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="partner">Chase</div>
+      <div class="partner">Bank of America</div>
+      <div class="partner">Wells Fargo</div>
+      <div class="partner">Citibank</div>
+      <div class="partner">Capital One</div>
+      <div class="partner">U.S. Bank</div>
+      <div class="partner">PNC</div>
+      <div class="partner">TD Bank</div>
+      <div class="partner">Truist</div>
+      <div class="partner">BBVA</div>
+      <div class="partner">Chase</div>
+      <div class="partner">Bank of America</div>
+      <div class="partner">Wells Fargo</div>
+      <div class="partner">Citibank</div>
+      <div class="partner">Capital One</div>
+      <div class="partner">U.S. Bank</div>
+      <div class="partner">PNC</div>
+      <div class="partner">TD Bank</div>
+      <div class="partner">Truist</div>
+      <div class="partner">BBVA</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-band">
+    <h2>Ready to talk about your next move?</h2>
+    <p>One conversation is enough to know whether we can help. We handle everything from application to closing.</p>
+    <div class="cta-actions">
+      <a href="mailto:hello@venturebc.com" class="btn btn-solid">Schedule a consultation</a>
+      <a href="tel:8001234567" class="btn btn-line">Call (800) 123-4567</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <div>
+          <div class="trust-title">BBB Accredited</div>
+          <div class="trust-sub">A+ rating since 2022</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div>
+          <div class="trust-title">FCRA Compliant</div>
+          <div class="trust-sub">Fair lending practices</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <div class="trust-title">Data Protection</div>
+          <div class="trust-sub">GDPR &amp; CCPA aligned</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div>
+          <div class="trust-title">Licensed</div>
+          <div class="trust-sub">State &amp; federal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cols">
+    <div>
+      <h4>Venture Business Capital</h4>
+      <p>VBC connects businesses with institutional capital from America's leading lenders. Fast funding, transparent terms, no equity dilution.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#services">Term loans</a>
+      <a href="#services">Lines of credit</a>
+      <a href="#services">Acquisition financing</a>
+      <a href="#services">Real estate financing</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="fcra-policy.html">FCRA compliance</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:hello@venturebc.com">hello@venturebc.com</a>
+      <a href="tel:8001234567">(800) 123-4567</a>
+      <p>Serving all 50 states</p>
+    </div>
+  </div>
+
+  <div class="footer-base">
+    <div class="footer-base-inner">
+      <span>© 2026 Venture Business Capital. All rights reserved.</span>
+      <span>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="fcra-policy.html">FCRA</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
