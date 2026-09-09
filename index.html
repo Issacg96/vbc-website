@@ -16,9 +16,8 @@
   "@type": "FinancialService",
   "name": "Venture Business Capital",
   "description": "Institutional-grade capital solutions for business and real estate financing",
-  "url": "https://venturebc.com",
-  "telephone": "(800) 123-4567",
-  "email": "hello@venturebc.com",
+  "url": "https://venturebusinesscapital.com",
+  "email": "info@venturebusinesscapital.com",
   "areaServed": "US",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "247" }
 }
@@ -147,8 +146,18 @@ h1, h2, h3, .serif {
 .svc-item {
   display: flex; gap: 18px; padding: 22px 0;
   border-bottom: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+  transition: background 0.15s;
 }
 .svc-item:last-child { border-bottom: none; }
+.svc-item:hover h3 { color: var(--forest); }
+.svc-item:hover .svc-more { opacity: 1; transform: translateX(0); }
+
+.svc-more {
+  font-size: 13px; font-weight: 600; color: var(--forest);
+  opacity: 0; transform: translateX(-4px); transition: opacity 0.15s, transform 0.15s;
+  margin-left: 6px;
+}
 
 .svc-icon {
   flex-shrink: 0; width: 42px; height: 42px; border-radius: 3px;
@@ -209,20 +218,52 @@ h1, h2, h3, .serif {
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; } }
 
 .partner {
-  flex-shrink: 0; padding: 18px 28px;
+  flex-shrink: 0; padding: 20px 30px;
   background: var(--white); border: 1px solid var(--line); border-radius: 3px;
-  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; color: var(--ink-soft);
+  font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.015em;
   white-space: nowrap;
+  display: flex; align-items: center;
 }
 
-/* ============ CTA ============ */
-.cta { background: var(--white); }
-.cta-band {
-  max-width: 1200px; margin: 0 auto; padding: 72px 24px; text-align: center;
+/* ============ APPLY ============ */
+.apply { background: var(--white); border-top: 1px solid var(--line); }
+
+.apply-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+
+.apply-intro h2 { font-size: 34px; margin-bottom: 16px; }
+.apply-intro p { color: var(--ink-soft); margin-bottom: 16px; }
+.apply-alt { font-size: 14.5px; }
+.apply-alt a { color: var(--forest); font-weight: 600; text-decoration: none; }
+.apply-alt a:hover { text-decoration: underline; }
+
+.apply-form {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  padding: 32px;
 }
-.cta-band h2 { font-size: 38px; margin-bottom: 14px; }
-.cta-band p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto 30px; }
-.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 18px; }
+
+.field label {
+  display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--ink);
+}
+.optional { font-weight: 400; color: var(--ink-soft); }
+
+.field input, .field select, .field textarea {
+  width: 100%; padding: 11px 13px;
+  font-family: 'Inter', sans-serif; font-size: 15px; color: var(--ink);
+  background: var(--white); border: 1px solid #d5d8d2; border-radius: 3px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--forest); box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.1);
+}
+.field input::placeholder, .field textarea::placeholder { color: #a3a9a1; }
+.field textarea { resize: vertical; }
+
+.btn-wide { width: 100%; padding: 14px; font-size: 15.5px; }
+
+.form-note { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin-top: 14px; }
 
 /* ============ FOOTER ============ */
 .site-footer { background: var(--ink); color: #b7bdb6; font-size: 14px; }
@@ -273,6 +314,7 @@ h1, h2, h3, .serif {
   .review-grid { grid-template-columns: 1fr; gap: 32px; }
   .trust-inner { grid-template-columns: 1fr 1fr; }
   .footer-cols { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .apply-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 640px) {
@@ -284,7 +326,9 @@ h1, h2, h3, .serif {
   .why-grid { grid-template-columns: 1fr; gap: 28px; }
   .trust-inner { grid-template-columns: 1fr; }
   .footer-cols { grid-template-columns: 1fr; }
-  .cta-band h2 { font-size: 30px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .apply-form { padding: 22px 18px; }
+  .apply-intro h2 { font-size: 28px; }
 }
 </style>
 </head>
@@ -311,10 +355,9 @@ h1, h2, h3, .serif {
       </span>
     </a>
     <nav class="nav">
-      <a href="#services">Services</a>
+      <a href="services.html">Services</a>
       <a href="#why">Why VBC</a>
-      <a href="#reviews">Clients</a>
-      <a href="#contact" class="btn btn-solid">Schedule a consultation</a>
+      <a href="#apply" class="btn btn-solid">Apply now</a>
     </nav>
   </div>
 </header>
@@ -324,9 +367,9 @@ h1, h2, h3, .serif {
   <div class="hero-inner">
     <div>
       <h1>Institutional capital, <em>without giving up a single share.</em></h1>
-      <p class="hero-lede">VBC connects your business with the right lender from a network of 50+ banks and private funds — at market rates, on your terms, in weeks rather than months.</p>
+      <p class="hero-lede">Tell us what you're building. We sit on your side of the table, put your deal in front of 50+ banks and private lenders, and get you funded — at market rates, in as little as two weeks.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-solid">Schedule a consultation</a>
+        <a href="#apply" class="btn btn-solid">Apply now</a>
         <a href="#services" class="btn btn-line">Explore financing options</a>
       </div>
     </div>
@@ -340,8 +383,8 @@ h1, h2, h3, .serif {
         <div class="figure-label">In financing arranged for clients</div>
       </div>
       <div>
-        <div class="figure-num">2–4<sup> wks</sup></div>
-        <div class="figure-label">Typical time from application to funding</div>
+        <div class="figure-num">2<sup> wks</sup></div>
+        <div class="figure-label">Funding in as little as two weeks</div>
       </div>
     </div>
   </div>
@@ -352,87 +395,87 @@ h1, h2, h3, .serif {
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Financing solutions</span>
-      <h2>Capital structured around your business, not the other way around.</h2>
-      <p>Every engagement starts with your goals. We match you to the lender and structure that fits.</p>
+      <h2>Financing that fits how your business actually runs.</h2>
+      <p>The acquisition, the building, the cash crunch, the growth push — tell us the goal and we'll structure the capital around it.</p>
     </div>
 
     <div class="svc-columns">
       <div>
         <div class="svc-group-title">Business financing</div>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#term-loans">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5 9.2 9.5 12 9.5s5 1.1 5 3-2.2 3-5 3-5-1.1-5-3"/></svg>
           </div>
           <div>
-            <h3>Term loans</h3>
+            <h3>Term loans <span class="svc-more">Learn more →</span></h3>
             <p>Fixed or variable financing for operations, equipment, and expansion. Terms up to 10 years.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#lines-of-credit">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           </div>
           <div>
-            <h3>Lines of credit</h3>
+            <h3>Lines of credit <span class="svc-more">Learn more →</span></h3>
             <p>Draw what you use, pay interest only on drawn amounts. Capital on standby for whatever comes.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#acquisition">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M13 20H2v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4zM7.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16 3.5a3.5 3.5 0 0 1 0 6.5"/></svg>
           </div>
           <div>
-            <h3>Acquisition financing</h3>
+            <h3>Acquisition financing <span class="svc-more">Learn more →</span></h3>
             <p>Strategic capital for M&amp;A, buyouts, and partner purchases — structured to match your cash flow.</p>
           </div>
-        </div>
+        </a>
       </div>
 
       <div>
         <div class="svc-group-title re">Real estate financing</div>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#commercial">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M10 22v-4h4v4"/></svg>
           </div>
           <div>
-            <h3>Commercial loans</h3>
+            <h3>Commercial loans <span class="svc-more">Learn more →</span></h3>
             <p>Institutional-grade financing for retail, office, and mixed-use property nationwide.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#hard-money">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div>
-            <h3>Hard money loans</h3>
+            <h3>Hard money loans <span class="svc-more">Learn more →</span></h3>
             <p>Fast closings for fix-and-flip and investment property when timing is everything.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#construction">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l8-6 8 6v12M9 20v-6h6v6"/></svg>
           </div>
           <div>
-            <h3>Construction loans</h3>
+            <h3>Construction loans <span class="svc-more">Learn more →</span></h3>
             <p>Draw schedules tied to project milestones, built for complex ground-up development.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="svc-item">
+        <a class="svc-item" href="services.html#bridge">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-8 4 16 3-12 2 4h5"/></svg>
           </div>
           <div>
-            <h3>Bridge loans</h3>
+            <h3>Bridge loans <span class="svc-more">Learn more →</span></h3>
             <p>Short-term capital to close the gap between transactions, with flexible repayment.</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -444,7 +487,7 @@ h1, h2, h3, .serif {
     <div class="section-head">
       <span class="kicker">Why VBC</span>
       <h2>We work for you — not for the lender.</h2>
-      <p>Our only job is finding the right capital partner and the right structure for your situation.</p>
+      <p>A bank sells you their product. We shop the whole market and bring back the deal that's actually best for you.</p>
     </div>
     <div class="why-grid">
       <div class="why-item">
@@ -457,7 +500,7 @@ h1, h2, h3, .serif {
       </div>
       <div class="why-item">
         <h3>Fast funding</h3>
-        <p>2–4 weeks from application to funding, versus 3–6 months at a traditional bank.</p>
+        <p>Funding in as little as two weeks. Walk into a bank branch and you'll wait 3–6 months for the same answer.</p>
       </div>
       <div class="why-item">
         <h3>Expert matching</h3>
@@ -480,7 +523,7 @@ h1, h2, h3, .serif {
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Client outcomes</span>
-      <h2>Businesses that came to us, and stayed.</h2>
+      <h2>Don't take our word for it.</h2>
     </div>
     <div class="review-grid">
       <div class="review">
@@ -528,43 +571,109 @@ h1, h2, h3, .serif {
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Our network</span>
-      <h2>Backed by America's leading institutions.</h2>
+      <h2>Names you already bank with.</h2>
+      <p>We arrange financing through working relationships with America's largest banks — plus a private network of 40+ funds you won't find on a branch corner.</p>
     </div>
   </div>
   <div class="marquee">
     <div class="marquee-track">
-      <div class="partner">Chase</div>
-      <div class="partner">Bank of America</div>
-      <div class="partner">Wells Fargo</div>
-      <div class="partner">Citibank</div>
-      <div class="partner">Capital One</div>
-      <div class="partner">U.S. Bank</div>
-      <div class="partner">PNC</div>
-      <div class="partner">TD Bank</div>
-      <div class="partner">Truist</div>
-      <div class="partner">BBVA</div>
-      <div class="partner">Chase</div>
-      <div class="partner">Bank of America</div>
-      <div class="partner">Wells Fargo</div>
-      <div class="partner">Citibank</div>
-      <div class="partner">Capital One</div>
-      <div class="partner">U.S. Bank</div>
-      <div class="partner">PNC</div>
-      <div class="partner">TD Bank</div>
-      <div class="partner">Truist</div>
-      <div class="partner">BBVA</div>
+      <div class="partner" style="color:#117ACA">CHASE</div>
+      <div class="partner" style="color:#E31837">Bank of America</div>
+      <div class="partner" style="color:#D71E28">WELLS FARGO</div>
+      <div class="partner" style="color:#003B70">c&#299;ti</div>
+      <div class="partner" style="color:#004977">Capital<span style="color:#D22E1E">One</span></div>
+      <div class="partner" style="color:#0C2074">U.S. Bank</div>
+      <div class="partner" style="color:#253746">PNC</div>
+      <div class="partner" style="color:#54B848">TD Bank</div>
+      <div class="partner" style="color:#2E1A47">TRUIST</div>
+      <div class="partner" style="color:#072146">BBVA</div>
+      <div class="partner" style="color:#117ACA">CHASE</div>
+      <div class="partner" style="color:#E31837">Bank of America</div>
+      <div class="partner" style="color:#D71E28">WELLS FARGO</div>
+      <div class="partner" style="color:#003B70">c&#299;ti</div>
+      <div class="partner" style="color:#004977">Capital<span style="color:#D22E1E">One</span></div>
+      <div class="partner" style="color:#0C2074">U.S. Bank</div>
+      <div class="partner" style="color:#253746">PNC</div>
+      <div class="partner" style="color:#54B848">TD Bank</div>
+      <div class="partner" style="color:#2E1A47">TRUIST</div>
+      <div class="partner" style="color:#072146">BBVA</div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-  <div class="cta-band">
-    <h2>Ready to talk about your next move?</h2>
-    <p>One conversation is enough to know whether we can help. We handle everything from application to closing.</p>
-    <div class="cta-actions">
-      <a href="mailto:hello@venturebc.com" class="btn btn-solid">Schedule a consultation</a>
-      <a href="tel:8001234567" class="btn btn-line">Call (800) 123-4567</a>
+<!-- APPLY -->
+<section class="section apply" id="apply">
+  <div class="wrap">
+    <div class="apply-grid">
+      <div class="apply-intro">
+        <span class="kicker">Apply now</span>
+        <h2>Tell us what you need. We'll take it from there.</h2>
+        <p>Two minutes of basic info is all it takes. We'll review it and come back to you within one business day — no commitment, no fee to find out where you stand.</p>
+        <p class="apply-alt">Prefer to write first? Email us at <a href="mailto:info@venturebusinesscapital.com">info@venturebusinesscapital.com</a>.</p>
+      </div>
+
+      <form class="apply-form" action="https://formsubmit.co/info@venturebusinesscapital.com" method="POST">
+        <input type="hidden" name="_subject" value="New financing application — VBC website">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" type="text" name="name" required placeholder="Jane Smith">
+          </div>
+          <div class="field">
+            <label for="f-biz">Business name</label>
+            <input id="f-biz" type="text" name="business" required placeholder="Smith Manufacturing LLC">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email" required placeholder="jane@company.com">
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" type="tel" name="phone" required placeholder="(555) 123-4567">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-type">Type of financing</label>
+            <select id="f-type" name="financing_type" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Term loan</option>
+              <option>Line of credit</option>
+              <option>Acquisition financing</option>
+              <option>Commercial real estate</option>
+              <option>Hard money loan</option>
+              <option>Construction loan</option>
+              <option>Bridge loan</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-amount">Amount needed</label>
+            <select id="f-amount" name="amount" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>Under $100K</option>
+              <option>$100K – $500K</option>
+              <option>$500K – $1M</option>
+              <option>$1M – $5M</option>
+              <option>$5M+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Anything else we should know? <span class="optional">(optional)</span></label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="Timeline, property details, what the funds are for..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-solid btn-wide">Submit application</button>
+        <p class="form-note">Submitting this form doesn't affect your credit. We'll never share your information.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -611,10 +720,10 @@ h1, h2, h3, .serif {
     </div>
     <div>
       <h4>Services</h4>
-      <a href="#services">Term loans</a>
-      <a href="#services">Lines of credit</a>
-      <a href="#services">Acquisition financing</a>
-      <a href="#services">Real estate financing</a>
+      <a href="services.html#term-loans">Term loans</a>
+      <a href="services.html#lines-of-credit">Lines of credit</a>
+      <a href="services.html#acquisition">Acquisition financing</a>
+      <a href="services.html#commercial">Real estate financing</a>
     </div>
     <div>
       <h4>Legal</h4>
@@ -623,8 +732,7 @@ h1, h2, h3, .serif {
     </div>
     <div>
       <h4>Contact</h4>
-      <a href="mailto:hello@venturebc.com">hello@venturebc.com</a>
-      <a href="tel:8001234567">(800) 123-4567</a>
+      <a href="mailto:info@venturebusinesscapital.com">info@venturebusinesscapital.com</a>
       <p>Serving all 50 states</p>
     </div>
   </div>
